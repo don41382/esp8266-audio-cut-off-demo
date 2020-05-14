@@ -26,9 +26,9 @@ void setup() {
     delay(100);
   }
   
-  // with dma buffer size of 16
-  // NOTE: no BEEP at the end, dma is content is not played
-  out = new AudioOutputI2S(0,0, 128);
+  // with dma buffer size of 2
+  // NOTE: you'll hear a BEEP at the end, because the complete song is played
+  out = new AudioOutputI2S(0,0, 2);
   out->SetOutputModeMono(true);
   out->SetGain(0.3);
 
@@ -47,9 +47,9 @@ void setup() {
 
   delay(1000);
 
-  // with dma buffer size of 2
-  // NOTE: BEEP at the end
-  out = new AudioOutputI2S(0,0, 2);
+  // with dma buffer size of 16
+  // NOTE: no BEEP at the end
+  out = new AudioOutputI2S(0,0, 16);
   out->SetOutputModeMono(true);
   out->SetGain(0.3);
 
